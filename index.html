@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | scld media</title>
-  <link rel="icon" href="/SM.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>scld media</title>
+  <link rel="icon" href="SM.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <style>
     /* ---------- RESET ---------- */
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -39,36 +39,32 @@ body{
 }
 .nav-container a:hover{opacity:.7;}
 
-/* ---------- CONTENT ---------- */
-h1{font-size:2.5rem;font-weight:800;text-transform:lowercase;margin-bottom:40px;}
-h2{font-size:1.6rem;font-weight:800;margin:40px 0 15px;}
-h3{font-size:1.3rem;margin:25px 0 10px;}
+/* ---------- HERO ---------- */
+header h1{
+  font-size:2.5rem;font-weight:800;text-transform:lowercase;margin-bottom:40px;
+}
+.info-heading{
+  font-size:1.7rem;font-weight:800;max-width:750px;margin-bottom:60px;line-height:1.4;
+}
 
-p,li{
-  font-size:1rem;line-height:1.7;max-width:800px;margin:0 auto 12px;text-align:left;
+/* ---------- CTA BUTTON ---------- */
+.cta-btn{
+  display:inline-block;
+  background:#111;color:#fff;
+  padding:16px 38px;border-radius:50px;
+  font-weight:800;font-size:1.05rem;
+  text-decoration:none;
+  box-shadow:0 0 10px rgba(0,0,0,.15);
+  transition:box-shadow .3s,transform .3s;
 }
-ul{list-style:disc;margin-left:1.5rem;}
-ol{margin-left:1.5rem;}
-section{width:100%;max-width:900px;margin-bottom:60px;}
+.cta-btn:hover{
+  box-shadow:0 0 18px rgba(0,0,0,.25);
+  transform:translateY(-3px);
+}
 
-/* ---------- PRICING CARDS ---------- */
-.pricing{
-  display:flex;
-  flex-wrap:wrap;
-  gap:32px;
-  justify-content:center;
-  margin-top:20px;
-}
-.plan{
-  flex:1 1 260px;
-  background:rgba(255,255,255,0.9);
-  border-radius:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
-  padding:24px;
-}
-.plan h4{font-size:1.15rem;font-weight:800;margin-bottom:12px;text-align:center;}
-.price{font-size:1.1rem;font-weight:700;margin-bottom:8px;text-align:center;}
-.plan p{text-align:center;margin-bottom:0;}
+/* ---------- FADE-IN ---------- */
+.fade-in{opacity:0;transform:translateY(40px);transition:opacity .6s,transform .6s;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
 
 /* ---------- BOTTOM POLICY LINKS ---------- */
 .bottom-links{
@@ -91,10 +87,13 @@ section{width:100%;max-width:900px;margin-bottom:60px;}
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:768px){
   .nav-container{gap:20px;padding:10px 24px;}
-  h1{font-size:2rem;}
-  h2{font-size:1.3rem;}
-  p,li{font-size:.95rem;}
+  header h1{font-size:2rem;}
+  .info-heading{font-size:1.35rem;}
+  .cta-btn{padding:14px 32px;font-size:1rem;}
   .bottom-links{gap:16px;padding:40px 0 24px;}
+}
+@media(max-width:480px){
+  .info-heading{font-size:1.2rem;}
 }
 ```
 
@@ -110,47 +109,38 @@ section{width:100%;max-width:900px;margin-bottom:60px;}
     </nav>
   </div>
 
-  <!-- ---------- HEADER ---------- -->
+  <!-- ---------- HERO ---------- -->
 
-  <header>
+  <header class="fade-in">
     <h1>scld media</h1>
   </header>
 
-  <!-- ---------- SECTIONS ---------- -->
+  <p class="info-heading fade-in">
+    Generate an extra $20,000 to $50,000/month<br/>
+    with our YouTube Organic Funnels.
+  </p>
 
-  <section id="what-we-do">
-    <h2>What&nbsp;We&nbsp;Do</h2>
-    <p>scld media helps <strong>agency owners and consultants</strong> attract high-quality inbound leads through strategic video content on YouTube. We turn your expertise into engaging content that educates, builds trust, and converts viewers into qualified prospects—without paid ads.</p>
-  </section>
+  <a class="cta-btn fade-in" href="https://calendly.com/scldgroup/call" target="_blank" rel="noopener noreferrer">
+    Book&nbsp;A&nbsp;Call
+  </a>
 
-  <section id="what-we-offer">
-    <h2>What&nbsp;We&nbsp;Offer</h2>
-    <ul>
-      <li><strong>YouTube Content Strategy</strong> – topic research, keyword planning, and funnel alignment.</li>
-      <li><strong>End-to-End Video Production</strong> – scripting, filming guidance, editing, thumbnail design, publishing.</li>
-      <li><strong>Content SEO & Distribution</strong> – optimization for discovery plus repurposing snippets across platforms.</li>
-      <li><strong>Organic Funnel Design</strong> – playlists, CTAs, lead magnets, and nurture flows that turn viewers into booked calls.</li>
-    </ul>
-  </section>
-
-  <section id="how-we-do">
-    <h2>How&nbsp;We&nbsp;Do&nbsp;It</h2>
-    <ol>
-      <li><strong>Discovery & Positioning</strong> – clarify your ICP, brand voice, and differentiation.</li>
-      <li><strong>Data-Driven Editorial Calendar</strong> – keyword intent & audience pain points mapped to revenue milestones.</li>
-      <li><strong>High-Impact Production</strong> – retention-focused scripts, dynamic editing, compelling thumbnails.</li>
-      <li><strong>Conversion Layer</strong> – optimized CTAs, lead magnets, and email sequences to move prospects forward.</li>
-      <li><strong>Continuous Optimization</strong> – weekly performance reviews and iterative testing so results compound.</li>
-    </ol>
-  </section>
-
-  <!-- ---------- BOTTOM POLICY LINKS ---------- -->
+  <!-- ---------- SIMPLE BOTTOM POLICY LINKS ---------- -->
 
   <div class="bottom-links">
     <a href="/policies#privacy">Privacy&nbsp;Policy</a>
     <a href="/policies#terms">Terms&nbsp;and&nbsp;Conditions</a>
     <a href="/policies#refund">Refund&nbsp;Policy</a>
-    <a href="https://www.linkedin.com/company/93260625/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
+
+  <!-- ---------- FADE-IN SCRIPT ---------- -->
+
+  <script>
+    const faders=document.querySelectorAll('.fade-in');
+    const obs=new IntersectionObserver((e,o)=>{
+      e.forEach(ent=>{if(ent.isIntersecting){ent.target.classList.add('visible');o.unobserve(ent.target);} });
+    },{threshold:.1,rootMargin:"0px 0px -50px 0px"});
+    faders.forEach(el=>obs.observe(el));
+  </script>
+
 </body>
 </html>
